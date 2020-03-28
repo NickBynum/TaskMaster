@@ -24,16 +24,19 @@
   <main class="container-fluid">
     <div class="row">
       <div class="col-4 border p-2 m-4">
-        <form action="submit" class="input-group">
-          <input type="list-name" placeholder="List Name...." class="mr-3 border-0"> Color:
-          <button type="submit" class="btn btn-sm btn-secondary ml-3">Create</button>
+        <form onsubmit="app.ListController.create(event)" class="input-group">
+          <div class="form-group">
+          <input type="text" name="listName" placeholder="List Name...." class="mr-3 border-0 form-control">
+        </div>
+          <button type="submit" class="btn btn-secondary ml-3">Add</button>
         </form>
       </div>
     </div>
   </main>
   <section class="container-fluid">
     <div class="row">
-      <div id="cards" class="col-3">
+      <div id="lists" class="col-3">
+<div class="row bg-primary">Title name</div>
       </div>
     </div>
   </section>
