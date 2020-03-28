@@ -11,9 +11,23 @@ export default class List {
   //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
   get Template() {
     return /*html*/ `
-    <div class="row bg-primary">test</div>
+ <div class="col-3 d-flex justify-content-around">
+        <div class="row">
+        <div class="col-12 text-center bg-primary text-light">
+        <i type="button" class="fa fa-plus text-success justify-start" onclick="addTask()"></i>
+          <span>${this.title}</span>
+          <i type="button" class="fa fa-times text-danger pl-3" onclick="addTask()"></i>
+        </div>
+          <div class="row">
+            <div class="col-12">
+              <input type="checkbox" class="bg-success">
+              <!-- <span>${this.task}</span> -->
+              <span><i type="button" class="fa fa-trash-o text-danger ml-auto" onclick="deleteTask()"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
     `
-    
   }
 
 }

@@ -3,6 +3,8 @@ import List from "./Models/List.js";
 let _state = {
   /** @type {List[]} */
   list: []
+  // /** @type {Task[]} */
+  // task: []
 };
 
 //NOTE You should not need to change the code from this point down
@@ -11,7 +13,7 @@ let _state = {
 function _loadState() {
   let data = JSON.parse(localStorage.getItem("TaskMaster"));
   if (data) {
-    data.lists = data.lists.map(l => new List(l));
+    data.list = data.list.map(l => new List(l));
     _state = data;
   }
 }
