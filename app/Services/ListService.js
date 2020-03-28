@@ -21,6 +21,7 @@ class ListService {
 
   delete(listID) {
     _store.State.lists = _store.State.lists.filter(lists => lists.id != listID)
+    _store.saveState()
   }
 }
 

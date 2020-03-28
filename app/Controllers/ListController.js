@@ -3,13 +3,14 @@ import _store from "../store.js"
 
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
+  return
   let template = ''
   let lists = _store.State.lists
 
 
-  lists.forEach(list => template += list.Template)
+  lists.forEach(list => (template += list.Template))
 
-  document.getElementById("lists").innerHTML = template
+  // document.getElementById("lists").innerHTML = template
 }
 
 
