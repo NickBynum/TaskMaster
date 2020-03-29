@@ -5,28 +5,34 @@ export default class List {
     //TODO Your constructor takes in a data object that should have the properties you need to create your list here is a freebie, it will set the id its provided, or if that is undefined it will create a new one (this is an alternative to object destructuring)
     this.title = data.title
     this.id = data.id || generateId();
+    this.tasks = []
     // this.completed = data.completed
   }
   //Be sure to add the methods needed to create the view template for this model
   //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
   get Template() {
     return /*html*/ `
- <div class="col-3 d-flex justify-content-around">
-        <div class="row">
-        <div class="col-12 text-center bg-primary text-light">
-        <i type="button" class="fa fa-plus text-success justify-start" onclick="addTask()"></i>
-          <span>${this.title}</span>
-          <i type="button" class="fa fa-times text-danger pl-3" onclick="addTask()"></i>
-        </div>
-          <div class="row">
-            <div class="col-12">
-              <input type="checkbox" class="bg-success">
-              <!-- <span>${this.task}</span> -->
-              <span><i type="button" class="fa fa-trash-o text-danger ml-auto" onclick="deleteTask()"></i></span>
-            </div>
+<div class="col-12 col-md-3 d-flex justify-content-around my-3">
+  <div class="row w-100 text-center bg-primary text-light py-1">
+    <span class="col-10">${this.title}</span>
+    <i type="button" class="col-2 fa fa-times text-danger text-right align-self-center"
+      onclick="app.listController.delete('${this.id}')">
+    </i>
+    <div class="col-12">
+      <div class="card-body bg-light text-secondary">sdfasdf
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
           </div>
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+          <i type="button" class="col-2 fa fa-plus text-success text-left align-self-center"
+            onclick="${delete(this.id)}">
+          </i>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
     `
   }
 
