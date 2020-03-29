@@ -19,13 +19,13 @@ export default class List {
       onclick="app.listController.delete('${this.id}')">
     </i>
     <div class="col-12">
-      <div class="card-body bg-light text-secondary">sdfasdf
-        <div class="input-group input-group-sm mb-3">
+      <div class="card-body bg-light text-secondary">Sample Task
+        <div class="input-group input-group-sm">
           <div class="input-group-prepend">
           </div>
+<!--used or adding task which does not have functionality yet -->
           <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-          <i type="button" class="col-2 fa fa-plus text-success text-left align-self-center"
-            onclick="${delete(this.id)}">
+          <i type="button" class="col-2 fa fa-plus text-success text-left align-self-center">
           </i>
         </div>
       </div>

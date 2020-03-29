@@ -28,26 +28,25 @@ export default class ListController {
     let newList = {
       title: formData.listName.value
     }
-
     _listService.create(newList)
     _drawLists()
     formData.reset()
   }
 
   delete(listID) {
-    console.log("from controller");
+    console.log(listID);
     
     _listService.delete(listID)
     _drawLists()
   }
 
-  addTask(event, taskId) {
-    event.preventDefault()
-    let formData = event.target
-    let newTaskData = {
-      title: formData.taskName.value
-    }
-    _listService.addTask(newTaskData, taskId)
-    _drawLists
-  }
+  // addTask(event, taskId) {
+  //   event.preventDefault()
+  //   let formData = event.target
+  //   let newTaskData = {
+  //     title: formData.taskName.value
+  //   }
+  //   _listService.addTask(newTaskData, taskId)
+  //   _drawLists
+  // }
 }
