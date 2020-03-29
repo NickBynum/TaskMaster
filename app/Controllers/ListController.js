@@ -25,6 +25,7 @@ export default class ListController {
   create(event) {
     event.preventDefault()
     let formData = event.target
+    console.log(formData)
     let newList = {
       title: formData.listName.value
     }
@@ -40,13 +41,14 @@ export default class ListController {
     _drawLists()
   }
 
-  // addTask(event, taskId) {
-  //   event.preventDefault()
-  //   let formData = event.target
-  //   let newTaskData = {
-  //     title: formData.taskName.value
-  //   }
-  //   _listService.addTask(newTaskData, taskId)
-  //   _drawLists
-  // }
+  addTask(event) {
+    event.preventDefault()
+    let formData = event.target
+    console.log(formData);
+    let newTaskData = {
+      task: formData.value
+    }
+    _listService.addTask(newTaskData)
+    _drawLists
+  }
 }

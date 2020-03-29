@@ -20,19 +20,16 @@ export default class List {
     </i>
     <div class="col-12">
       <div class="card-body bg-light text-secondary">Sample Task
-        <div class="input-group input-group-sm">
-          <div class="input-group-prepend">
-          </div>
-<!--used or adding task which does not have functionality yet -->
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-          <i type="button" class="col-2 fa fa-plus text-success text-left align-self-center">
-          </i>
+        <!--used or adding task which does not have functionality yet -->
+          <form onsubmit="app.listController.addTask(event)" class="input-group">
+            <input name="taskName" placeholder="Enter New Task..." type="text" class="form-control" aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm">
+            <button type="submit" class="border-0 bg-light"><i class="fa fa-plus text-success text-left align-self-center"></i></button>
+          </form> 
         </div>
       </div>
     </div>
   </div>
-</div>
-
     `
   }
 
