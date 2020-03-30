@@ -4,6 +4,7 @@ import _store from "../store.js"
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
   let template = ''
+
   let lists = _store.State.lists
 
 
@@ -41,14 +42,18 @@ export default class ListController {
     _drawLists()
   }
 
-  addTask(event) {
+  addTask(event, listID) {
     event.preventDefault()
     let formData = event.target
-    console.log(formData);
-    let newTaskData = {
-      task: formData.value
-    }
-    _listService.addTask(newTaskData)
-    _drawLists
+    let newTaskData = formData.taskName.value
+    _listService.addTask(newTaskData, listID)
+    formData.reset()
+      _drawLists()
+  }
+
+  deleteTask(index, listID){
+    _listService.deleteTask(index, listID)
+    _drawLists()
   }
 }
+
